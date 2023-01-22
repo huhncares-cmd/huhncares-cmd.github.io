@@ -8,6 +8,7 @@ body {
     overflow-x: hidden;
 }
 header {
+    overflow-x: hidden;
     z-index: 0;
     position: fixed;
     transform: translateX(-100%);
@@ -31,6 +32,7 @@ nav ul {
     height: 50%;
 }
 main {
+    overflow-x: hidden;
     z-index: 0;
     transform: translateX(0%);
     transition: 0.5s ease-in;
@@ -39,6 +41,7 @@ main.active {
     transform: translateX(100%);
 }
 #wrapper {
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
 }
