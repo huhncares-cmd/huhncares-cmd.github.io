@@ -9,6 +9,4 @@ nav.addEventListener("click", () => {
 function toggleSidebar() {
     document.querySelector("main").classList.toggle("active");
     document.querySelector("header").classList.toggle("active");
-
-    document.body.style.overflowX = "hidden";
 }
