@@ -76,7 +76,7 @@ footer {
     width: 100%;
 }
 .link {
-    color: #000;
+    color: #fff;
     text-decoration: underline;
 }
 @media screen and (max-width: 1250px) {
