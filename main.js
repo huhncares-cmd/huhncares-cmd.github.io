@@ -5,11 +5,8 @@ btn.addEventListener("click", () => {
 });
 nav.addEventListener("click", () => {
     toggleSidebar();
-    document.querySelector("body").style.overflowX = "hidden";
 });
 function toggleSidebar() {
     document.querySelector("main").classList.toggle("active");
     document.querySelector("header").classList.toggle("active");
-    
-    document.querySelector("body").style.overflowX = "hidden";
 }
