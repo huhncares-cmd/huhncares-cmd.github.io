@@ -24,6 +24,9 @@ main {
     display: none;
 }
 .section.active {
+    display: block;
+}
+.subsection {
     display: flex;
     flex-direction: row;
 }
@@ -36,7 +39,7 @@ main {
     .image {
         width: 100%;
     }
-    .section.active {
+    .subsection {
         display: flex;
         flex-direction: column;
     }
