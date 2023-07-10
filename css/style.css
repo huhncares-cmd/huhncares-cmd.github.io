@@ -30,7 +30,7 @@ nav.sticky {
     background-image: url("../assets/img/banner.png");
     background-size: cover;
     background-position: center;
-    padding: 50px 10%;
+    padding: 100px 10%;
     height: 300px;
     top: 0;
 }
