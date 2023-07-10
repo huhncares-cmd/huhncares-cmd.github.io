@@ -23,3 +23,8 @@
     font-weight: bolder;
     color: #009FB7;
 }
+@media screen and (max-width: 1024px) {
+    card {
+        width: 100%;
+    }
+}
