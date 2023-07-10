@@ -53,6 +53,9 @@ footer {
     width: 100vw;
 }
 @media screen and (max-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
     .intro {
         margin-top: 0;
         padding: 50px 5%;
