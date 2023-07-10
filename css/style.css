@@ -32,7 +32,7 @@ nav.sticky {
     background-position: center;
     height: 300px;
     top: 0;
-    padding: 100px 100px 20px 100px;
+    padding: 50px 10%;
 }
 .intro-text {
     font-size: 20px;
@@ -52,4 +52,9 @@ footer {
     flex-direction: column;
     height: 60px;
     width: 100vw;
+}
+@media screen and (max-width: 1024px) {
+    .intro {
+        padding: 50px 5%;
+    }
 }
