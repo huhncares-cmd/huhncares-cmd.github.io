@@ -4,14 +4,14 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('../assets/fonts/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('assets/fonts/poppins-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 body {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
     font-size: 30px;
+    overflow-x: hidden;
 }
 #topics {
     display: flex;
@@ -78,8 +78,14 @@ h1 {
 footer {
     font-size: 20px;
     height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;   
+    width: 100vw;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    body, html {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 2rem
+    }
 }
