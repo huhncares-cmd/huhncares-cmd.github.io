@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortieralgorithmen | Mergesort</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <button id="scroll-down-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 20px; height: 20px;">
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path fill="#ffffff" d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/>
+        </svg>
+    </button>
+    <header>
+        <div class="fade-in">
+            <h1>Mergesort</h1>
+            <p>Divide, Conquer, Sort!</p>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <h2>Beschreibung</h2>
+            <ul>
+                <li>unsortierte Liste wird in kleinere Teillisten aufgeteilt, bis jede Teilliste nur noch ein Element enthält</li>
+                <li>
+                    Danach: Teillisten paarweise zusammengeführt und dabei in sortierter Reihenfolge kombiniert, bis die gesamte Liste sortiert ist
+                    <ul>
+                        <li>Zusammenführung von bereits sortierten Teillisten in eine größere sortierte Liste</li>
+                    </ul>
+                </li>
+            </ul>
+            <h2>Anwendungsbereiche</h2>
+            <ul>
+                <li>besonders nützlich für große Datensätze</li>
+                <li>Datenbank- und Betriebssystemimplementierung</li>
+                <li>Suchalgorithmen</li>
+            </ul>
+            <h2>Pseudocode</h2>
+            <ol>
+                <li><b>Teilen</b>: Die unsortierte Liste wird rekursiv in kleinere Teillisten aufgeteilt, bis jede Teilliste nur noch ein Element enthält.</li>
+                <li><b>Sortieren</b>: Nachdem die Teillisten auf das kleinste Element reduziert wurden, werden sie paarweise zusammengeführt und dabei in sortierter Reihenfolge kombiniert. Dieser Schritt wird so lange wiederholt, bis die gesamte Liste sortiert ist.</li>
+                <li><b>Zusammmenführen (Merge)</b>: Die Schlüsseloperation beim Mergesort ist das Zusammenführen der sortierten Teillisten in eine größere sortierte Liste. Dabei werden die Elemente der Teillisten verglichen und in die endgültige sortierte Reihenfolge gebracht.</li>
+            </ol>
+            <h2>Stabilität</h2>
+            <div>
+                Mergesort ist ein stabiler Alogirthmus, d.h. die Reihenfolge der Elemente bleibt erhalten, wenn sie gleich sind.
+            </div>
+            <h2>Zeitkomplexität</h2>
+            <div>
+                <canvas id="worstCase"></canvas>
+                <p>
+                    Die Zeitkomplexität beträgt im worst (O), average (Θ) sowie best(Ω) case <i>n*log(n)</i>.<br>
+                </p>
+            </div>
+            <h3>Beispiele</h3>
+            <ul>
+                <li>worst case: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</li>
+                <li>best case: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</li>
+            </ul>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.4.0/math.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('worstCase');
+        const labels = [];
+        for (let i = 1; i <= 10000; i *= 2) {
+            labels.push(i);
+        }
+        const data = labels.map(x => math.log(x) * x);
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'n*log(n)',
+                    data: data,
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'n'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'n*log(n)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
