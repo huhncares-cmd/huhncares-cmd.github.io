@@ -126,4 +126,7 @@ code {
     .sub-wrapper .half {
         width: 100%;
     }
+    #solution {
+        width: 100%;
+    }
 }
