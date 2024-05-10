@@ -92,6 +92,9 @@ main {
     background-color: #212121;
     color: #fff;
 }
+.img {
+    width: 100%;
+}
 canvas {
     width: 80%;
 }
