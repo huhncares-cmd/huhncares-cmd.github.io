@@ -5,253 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raphael | Developer & Politikfan</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Courier New', monospace;
-            background: #0a0a0a;
-            color: #00ff88;
-            overflow-x: hidden;
-        }
-        
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, #00ff8820 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        
-        .glitch {
-            font-size: 5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            position: relative;
-            color: #00ff88;
-            letter-spacing: 0.5rem;
-            animation: glitch 1s infinite;
-        }
-        
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00de;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-        
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #00f0ff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 1s infinite linear alternate-reverse;
-        }
-        
-        @keyframes glitch {
-            2%, 64% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            4%, 60% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            62% {
-                transform: translate(0, 0) skew(5deg);
-            }
-        }
-        
-        @keyframes glitch-anim {
-            0% {
-                clip: rect(100px, 9999px, 45px, 0);
-            }
-            20% {
-                clip: rect(82px, 9999px, 80px, 0);
-            }
-            40% {
-                clip: rect(33px, 9999px, 12px, 0);
-            }
-            60% {
-                clip: rect(56px, 9999px, 90px, 0);
-            }
-            80% {
-                clip: rect(10px, 9999px, 34px, 0);
-            }
-            100% {
-                clip: rect(71px, 9999px, 16px, 0);
-            }
-        }
-        
-        @keyframes glitch-anim2 {
-            0% {
-                clip: rect(65px, 9999px, 72px, 0);
-            }
-            20% {
-                clip: rect(23px, 9999px, 11px, 0);
-            }
-            40% {
-                clip: rect(88px, 9999px, 55px, 0);
-            }
-            60% {
-                clip: rect(47px, 9999px, 24px, 0);
-            }
-            80% {
-                clip: rect(90px, 9999px, 67px, 0);
-            }
-            100% {
-                clip: rect(14px, 9999px, 31px, 0);
-            }
-        }
-        
-        .subtitle {
-            text-align: center;
-            margin-top: 2rem;
-            font-size: 1.5rem;
-            color: #ff00de;
-        }
-        
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            color: #00f0ff;
-            border-left: 5px solid #00ff88;
-            padding-left: 1rem;
-        }
-        
-        .skills {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .skill {
-            position: relative;
-        }
-        
-        .skill-name {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-bar {
-            height: 20px;
-            background: #1a1a1a;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00ff88, #00f0ff);
-            border-radius: 10px;
-            transition: width 2s ease;
-            width: 0;
-        }
-        
-        .skill.visible .skill-fill {
-            animation: fillBar 2s forwards;
-        }
-        
-        @keyframes fillBar {
-            to { width: var(--width); }
-        }
-        
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .project {
-            background: #1a1a1a;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .project:hover {
-            border-color: #00ff88;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px #00ff8830;
-        }
-        
-        .project h3 {
-            color: #ff00de;
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: #00f0ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        a:hover {
-            color: #00ff88;
-        }
-        
-        .contact {
-            text-align: center;
-        }
-        
-        .contact a {
-            display: inline-block;
-            margin: 1rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(90deg, #ff00de, #00f0ff);
-            color: #0a0a0a;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        
-        .contact a:hover {
-            transform: scale(1.1);
-        }
-        
-        @media (max-width: 768px) {
-            .glitch {
-                font-size: 3rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff88; overflow-x: hidden; }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; width: 200%; height: 200%; background: radial-gradient(circle, #00ff8820 0%, transparent 70%); animation: pulse 4s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        .glitch { font-size: 5rem; font-weight: bold; text-transform: uppercase; position: relative; color: #00ff88; letter-spacing: 0.5rem; animation: glitch 1s infinite; }
+        .glitch::before, .glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .glitch::before { left: 2px; text-shadow: -2px 0 #ff00de; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim 5s infinite linear alternate-reverse; }
+        .glitch::after { left: -2px; text-shadow: -2px 0 #00f0ff; clip: rect(44px, 450px, 56px, 0); animation: glitch-anim2 1s infinite linear alternate-reverse; }
+        @keyframes glitch { 2%, 64% { transform: translate(2px, 0) skew(0deg); } 4%, 60% { transform: translate(-2px, 0) skew(0deg); } 62% { transform: translate(0, 0) skew(5deg); } }
+        @keyframes glitch-anim { 0% { clip: rect(100px, 9999px, 45px, 0); } 20% { clip: rect(82px, 9999px, 80px, 0); } 40% { clip: rect(33px, 9999px, 12px, 0); } 60% { clip: rect(56px, 9999px, 90px, 0); } 80% { clip: rect(10px, 9999px, 34px, 0); } 100% { clip: rect(71px, 9999px, 16px, 0); } }
+        @keyframes glitch-anim2 { 0% { clip: rect(65px, 9999px, 72px, 0); } 20% { clip: rect(23px, 9999px, 11px, 0); } 40% { clip: rect(88px, 9999px, 55px, 0); } 60% { clip: rect(47px, 9999px, 24px, 0); } 80% { clip: rect(90px, 9999px, 67px, 0); } 100% { clip: rect(14px, 9999px, 31px, 0); } }
+        .subtitle { text-align: center; margin-top: 2rem; font-size: 1.5rem; color: #ff00de; }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { font-size: 3rem; margin-bottom: 2rem; color: #00f0ff; border-left: 5px solid #00ff88; padding-left: 1rem; }
+        .skills { display: grid; gap: 2rem; margin-top: 3rem; }
+        .skill { position: relative; }
+        .skill-name { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .skill-bar { height: 20px; background: #1a1a1a; border-radius: 10px; overflow: hidden; position: relative; }
+        .skill-fill { height: 100%; background: linear-gradient(90deg, #00ff88, #00f0ff); border-radius: 10px; transition: width 2s ease; width: 0; }
+        .skill.visible .skill-fill { animation: fillBar 2s forwards; }
+        @keyframes fillBar { to { width: var(--width); } }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .project { background: #1a1a1a; padding: 2rem; border-radius: 10px; border: 2px solid transparent; transition: all 0.3s ease; }
+        .project:hover { border-color: #00ff88; transform: translateY(-10px); box-shadow: 0 10px 30px #00ff8830; }
+        .project h3 { color: #ff00de; margin-bottom: 1rem; }
+        a { color: #00f0ff; text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #00ff88; }
+        .contact { text-align: center; }
+        .contact a { display: inline-block; margin: 1rem; padding: 1rem 2rem; background: linear-gradient(90deg, #ff00de, #00f0ff); color: #0a0a0a; font-weight: bold; border-radius: 5px; transition: transform 0.3s; }
+        .contact a:hover { transform: scale(1.1); }
+        @media (max-width: 768px) { .glitch { font-size: 3rem; } h2 { font-size: 2rem; } }
     </style>
 </head>
 <body>
@@ -261,71 +46,33 @@
             <p class="subtitle">Developer • Politik • Informatik</p>
         </div>
     </div>
-    
     <section>
         <h2>About</h2>
         <p>Hey! Ich bin Raphael, Student aus Deutschland mit Leidenschaft für Informatik und Politik. Ich baue coole Projekte, experimentiere mit Code und diskutiere gerne über die Welt da draußen.</p>
     </section>
-    
     <section>
         <h2>Skills</h2>
         <div class="skills">
-            <div class="skill">
-                <div class="skill-name">Python / Rust</div>
-                <div class="skill-bar">
-                    <div class="skill-fill" style="--width: 85%"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill-name">Linux / Hyprland</div>
-                <div class="skill-bar">
-                    <div class="skill-fill" style="--width: 90%"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill-name">Git / GitHub</div>
-                <div class="skill-bar">
-                    <div class="skill-fill" style="--width: 80%"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <div class="skill-name">Politik & Research</div>
-                <div class="skill-bar">
-                    <div class="skill-fill" style="--width: 95%"></div>
-                </div>
-            </div>
+            <div class="skill"><div class="skill-name">Python / Rust</div><div class="skill-bar"><div class="skill-fill" style="--width: 85%"></div></div></div>
+            <div class="skill"><div class="skill-name">Linux / Hyprland</div><div class="skill-bar"><div class="skill-fill" style="--width: 90%"></div></div></div>
+            <div class="skill"><div class="skill-name">Git / GitHub</div><div class="skill-bar"><div class="skill-fill" style="--width: 80%"></div></div></div>
+            <div class="skill"><div class="skill-name">Politik & Research</div><div class="skill-bar"><div class="skill-fill" style="--width: 95%"></div></div></div>
         </div>
     </section>
-    
     <section>
         <h2>Projects</h2>
         <div class="projects">
-            <div class="project">
-                <h3>Homepage</h3>
-                <p>Personal landing page (you're here!)</p>
-                <a href="https://github.com/huhncares-cmd/homepage">→ View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Hyprland Config</h3>
-                <p>Custom Wayland compositor setup</p>
-                <a href="https://github.com/huhncares-cmd/hyprland-config">→ View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>KeePass-rs</h3>
-                <p>Password manager experiments</p>
-                <a href="https://github.com/huhncares-cmd/keepass-rs">→ View on GitHub</a>
-            </div>
+            <div class="project"><h3>Homepage</h3><p>Personal landing page (you're here!)</p><a href="https://github.com/huhncares-cmd/homepage">→ GitHub</a></div>
+            <div class="project"><h3>Hyprland Config</h3><p>Custom Wayland compositor setup</p><a href="https://github.com/huhncares-cmd/hyprland-config">→ GitHub</a></div>
+            <div class="project"><h3>KeePass-rs</h3><p>Password manager experiments</p><a href="https://github.com/huhncares-cmd/keepass-rs">→ GitHub</a></div>
         </div>
     </section>
-    
     <section class="contact">
         <h2>Kontakt</h2>
-        <a href="mailto:raphael@matjeschk.dev">E-Mail senden</a>
+        <a href="mailto:raphael@matjeschk.dev">E-Mail</a>
         <a href="https://github.com/huhncares-cmd">GitHub</a>
     </section>
-    
     <script>
-        // Skill bar animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -333,7 +80,6 @@
                 }
             });
         });
-        
         document.querySelectorAll('.skill').forEach(skill => {
             observer.observe(skill);
         });
