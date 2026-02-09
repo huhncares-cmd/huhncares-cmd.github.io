@@ -3,98 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raphael Huhncares</title>
+<title>Raphael</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;color:#1a1a2e}.container{max-width:1200px;margin:0 auto;padding:2rem}.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:4rem}.logo{font-size:1.8rem;font-weight:700;color:#fff}.nav a{color:#fff;text-decoration:none;margin-left:2rem;transition:.3s;opacity:.8}.nav a:hover{opacity:1}.hero{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:30px;padding:6rem 3rem;text-align:center;margin-bottom:4rem;border:1px solid rgba(255,255,255,.2)}.hero h1{font-size:4rem;color:#fff;margin-bottom:1rem;font-weight:800}.hero p{font-size:1.3rem;color:rgba(255,255,255,.9);margin-bottom:2rem}.cta-btn{display:inline-block;background:#fff;color:#667eea;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s;margin:0 .5rem}.cta-btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,.2)}.section{margin-bottom:5rem}.section h2{font-size:2.5rem;color:#fff;margin-bottom:2rem}.about{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:3rem;border:1px solid rgba(255,255,255,.2)}.about p{font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,.95)}.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}.skill-card{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,.2);transition:all .3s}.skill-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.15)}.skill-name{font-size:1.2rem;color:#fff;margin-bottom:1rem;font-weight:600}.progress{height:8px;background:rgba(255,255,255,.2);border-radius:10px;overflow:hidden}.progress-bar{height:100%;background:linear-gradient(90deg,#00d4ff,#7928ca);border-radius:10px;animation:growWidth 2s ease-out forwards}.progress-bar-85{width:85%}.progress-bar-90{width:90%}.progress-bar-80{width:80%}.progress-bar-95{width:95%}@keyframes growWidth{from{width:0}}.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}.project-card{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,.2);transition:all .3s;overflow:hidden}.project-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#667eea,#764ba2);opacity:0;transition:.3s;border-radius:20px;z-index:-1}.project-card:hover{transform:translateY(-10px);border-color:rgba(255,255,255,.4)}.project-card:hover::before{opacity:.5}.project-card h3{color:#fff;margin-bottom:1rem;font-size:1.4rem}.project-card p{color:rgba(255,255,255,.85);margin-bottom:1.5rem;line-height:1.6}.project-link{color:#fff;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;transition:.3s}.project-link:hover{opacity:.7}.contact-section{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border-radius:20px;padding:4rem;text-align:center;border:1px solid rgba(255,255,255,.2)}.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}.contact-item{padding:2rem;background:rgba(255,255,255,.05);border-radius:15px;border:1px solid rgba(255,255,255,.1);transition:.3s}.contact-item:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}.contact-item a{color:#fff;text-decoration:none;font-weight:500;transition:.3s}.contact-item a:hover{opacity:.8}footer{text-align:center;padding:3rem;color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.1);margin-top:5rem}@media(max-width:768px){.hero{padding:3rem 1.5rem}.hero h1{font-size:2.5rem}.container{padding:1rem}.section h2{font-size:1.8rem}}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Courier New',monospace;background:#000;color:#0f0;overflow-x:hidden}canvas{position:fixed;top:0;left:0;z-index:-1;height:100vh}.nav{display:flex;justify-content:space-between;align-items:center;padding:2rem;position:relative;z-index:10;background:rgba(0,0,0,.9)}.logo{color:#0ff;font-size:1.5rem;font-weight:bold}.nav-links{display:flex;gap:2rem}.nav-links a{color:#0f0;text-decoration:none;transition:.3s}.nav-links a:hover{color:#0ff}.hamburger{display:none;flex-direction:column;cursor:pointer}.hamburger span{width:25px;height:3px;background:#0f0;margin:5px 0;transition:.3s}.hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:rgba(0,0,0,.5)}.glitch{font-size:4rem;font-weight:bold;color:#0ff;letter-spacing:.3rem;animation:glitch 1s infinite;position:relative}.glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0}.glitch::before{left:2px;text-shadow:-2px 0 #f0f;clip:rect(0,900px,0,0);animation:glitch-1 2s infinite}.glitch::after{left:-2px;text-shadow:-2px 0 #0ff;clip:rect(0,0,0,900px);animation:glitch-2 2s infinite}@keyframes glitch{0%,100%{text-shadow:0 0}20%{text-shadow:2px 2px #f0f,-2px -2px #0ff}40%{text-shadow:-2px 0 #0f0,2px 2px #f0f}60%{text-shadow:2px -2px #0ff,-2px 2px #0f0}80%{text-shadow:-2px -2px #f0f,2px 0 #0ff}}@keyframes glitch-1{0%{clip:rect(0,900px,0,0)}5%{clip:rect(67px,900px,91px,0)}10%{clip:rect(54px,900px,130px,0)}15%{clip:rect(25px,900px,58px,0)}20%{clip:rect(100px,900px,16px,0)}25%{clip:rect(69px,900px,15px,0)}30%{clip:rect(130px,900px,94px,0)}35%{clip:rect(42px,900px,75px,0)}40%{clip:rect(20px,900px,85px,0)}45%{clip:rect(16px,900px,71px,0)}50%{clip:rect(56px,900px,147px,0)}55%{clip:rect(50px,900px,101px,0)}60%{clip:rect(69px,900px,120px,0)}65%{clip:rect(70px,900px,40px,0)}70%{clip:rect(72px,900px,37px,0)}75%{clip:rect(76px,900px,47px,0)}80%{clip:rect(38px,900px,53px,0)}85%{clip:rect(27px,900px,58px,0)}90%{clip:rect(100px,900px,45px,0)}95%{clip:rect(50px,900px,95px,0)}100%{clip:rect(0,900px,0,0)}}@keyframes glitch-2{0%{clip:rect(0,0,0,0)}5%{clip:rect(74px,0,141px,0)}10%{clip:rect(97px,0,144px,0)}15%{clip:rect(24px,0,98px,0)}20%{clip:rect(61px,0,124px,0)}25%{clip:rect(99px,0,126px,0)}30%{clip:rect(13px,0,113px,0)}35%{clip:rect(65px,0,149px,0)}40%{clip:rect(88px,0,124px,0)}45%{clip:rect(41px,0,149px,0)}50%{clip:rect(97px,0,124px,0)}55%{clip:rect(1px,0,62px,0)}60%{clip:rect(78px,0,131px,0)}65%{clip:rect(71px,0,100px,0)}70%{clip:rect(32px,0,151px,0)}75%{clip:rect(77px,0,149px,0)}80%{clip:rect(89px,0,115px,0)}85%{clip:rect(25px,0,148px,0)}90%{clip:rect(13px,0,79px,0)}95%{clip:rect(41px,0,118px,0)}100%{clip:rect(0,0,0,0)}}.subtitle{text-align:center;margin-top:1rem;font-size:1.2rem;color:#f0f}section{padding:5rem 2rem;max-width:1200px;margin:0 auto;opacity:0;animation:fadeIn .8s forwards}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}h2{font-size:2.5rem;color:#0ff;border-left:5px solid #0f0;padding-left:1rem;margin-bottom:2rem}.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:2rem}.skill-card{background:#0a0a0a;padding:2rem;border-radius:10px;border:1px solid #0ff30;transition:all .3s}.skill-card:hover{border-color:#0ff;box-shadow:0 0 20px #0ff40}.skill-name{color:#f0f;margin-bottom:1rem;font-weight:bold}.skill-bar{height:10px;background:#111;border-radius:5px;overflow:hidden}.skill-fill{height:100%;background:linear-gradient(90deg,#0f0,#0ff);transition:width 2s}.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem}.project{background:#0a0a0a;padding:2rem;border-radius:10px;border:1px solid #0ff30;transition:all .3s}.project:hover{transform:translateY(-5px);border-color:#0ff;box-shadow:0 10px 30px #0ff40}.project h3{color:#f0f;margin-bottom:1rem}.contact{text-align:center;background:#0a0a0a;padding:3rem;border-radius:10px;border:1px solid #0ff30}.contact a{display:inline-block;margin:1rem;padding:1rem 2rem;background:linear-gradient(90deg,#f0f,#0ff);color:#000;font-weight:bold;border-radius:5px;text-decoration:none;transition:.3s}.contact a:hover{transform:scale(1.05)}@media(max-width:768px){.glitch{font-size:2.5rem}.nav-links{display:none;position:absolute;top:60px;right:0;flex-direction:column;background:#000;width:100%;padding:2rem;gap:1rem}.nav-links.open{display:flex}.hamburger{display:flex}.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}h2{font-size:1.8rem}section{padding:2rem 1rem}}
 </style>
 </head>
 <body>
-<div class="container">
-<div class="nav">
+<canvas id="particles"></canvas>
+
+<nav class="nav">
 <div class="logo">raphael</div>
-<div><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+<div class="nav-links" id="navLinks">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </div>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+</nav>
 
 <div class="hero">
-<h1>Raphael Huhncares</h1>
-<p>Developer • Politics Enthusiast • Linux Nerd</p>
-<a href="#contact" class="cta-btn">Get in Touch</a>
+<div>
+<h1 class="glitch" data-text="RAPHAEL">RAPHAEL</h1>
+<p class="subtitle">Developer • Politik • Informatik</p>
+</div>
 </div>
 
-<section class="section" id="about">
-<h2>About Me</h2>
-<div class="about">
-<p>Hey! I'm Raphael, a student from Germany passionate about software development and politics. I love building cool projects, experimenting with new technologies, and discussing the world around us. Always learning, always coding, always thinking.</p>
-</div>
+<section id="about">
+<h2>About</h2>
+<p>Hey! I'm Raphael, a German student passionate about coding and politics. Always experimenting, always building, always thinking.</p>
 </section>
 
-<section class="section" id="skills">
+<section id="skills">
 <h2>Skills</h2>
-<div class="skills-grid">
+<div class="skills">
 <div class="skill-card">
-<div class="skill-name">Python & Rust</div>
-<div class="progress"><div class="progress-bar progress-bar-85"></div></div>
+<div class="skill-name">Python / Rust</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
 </div>
 <div class="skill-card">
-<div class="skill-name">Linux & Hyprland</div>
-<div class="progress"><div class="progress-bar progress-bar-90"></div></div>
+<div class="skill-name">Linux / Hyprland</div>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
 </div>
 <div class="skill-card">
-<div class="skill-name">Git & GitHub</div>
-<div class="progress"><div class="progress-bar progress-bar-80"></div></div>
+<div class="skill-name">Git / GitHub</div>
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
 </div>
 <div class="skill-card">
 <div class="skill-name">Politics & Research</div>
-<div class="progress"><div class="progress-bar progress-bar-95"></div></div>
+<div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
 </div>
 </div>
 </section>
 
-<section class="section" id="projects">
+<section id="projects">
 <h2>Projects</h2>
-<div class="projects-grid">
-<div class="project-card">
+<div class="projects">
+<div class="project">
 <h3>huhnshares</h3>
-<p>A simple but elegant filesharing website built with Python and Flask. Share files with ease.</p>
-<a href="https://github.com/huhncares-cmd/huhnshares" class="project-link">View on GitHub →</a>
+<p>Filesharing website • Python/Flask</p>
+<a href="https://github.com/huhncares-cmd/huhnshares">→ GitHub</a>
 </div>
-<div class="project-card">
+<div class="project">
 <h3>Wikipedia Darkmode</h3>
-<p>Firefox addon that adds Wikipedia QuickSearch and a beautiful dark mode for comfortable reading.</p>
-<a href="https://github.com/huhncares-cmd/WikipediaDarkmode-Firefox" class="project-link">View on GitHub →</a>
+<p>Firefox addon • Dark mode + QuickSearch</p>
+<a href="https://github.com/huhncares-cmd/WikipediaDarkmode-Firefox">→ GitHub</a>
 </div>
-<div class="project-card">
-<h3>This Website</h3>
-<p>Modern portfolio site crafted by clawd with a focus on clean design and smooth interactions.</p>
-<a href="https://github.com/huhncares-cmd/homepage" class="project-link">View on GitHub →</a>
-</div>
-</div>
-</section>
-
-<section class="section" id="contact">
-<div class="contact-section">
-<h2>Let's Connect</h2>
-<p style="color:rgba(255,255,255,.85);font-size:1.1rem;margin-bottom:2rem">Interested in working together? Feel free to reach out!</p>
-<div class="contact-grid">
-<div class="contact-item">
-<h3 style="color:#fff;margin-bottom:.5rem">📧 Email</h3>
-<a href="mailto:raphael@matjeschk.dev">raphael@matjeschk.dev</a>
-</div>
-<div class="contact-item">
-<h3 style="color:#fff;margin-bottom:.5rem">💻 GitHub</h3>
-<a href="https://github.com/huhncares-cmd">@huhncares-cmd</a>
-</div>
+<div class="project">
+<h3>Homepage</h3>
+<p>This website • Built with clawd</p>
+<a href="https://github.com/huhncares-cmd/homepage">→ GitHub</a>
 </div>
 </div>
 </section>
 
-<footer>
-<p>Built with 💜 by clawd | 2026</p>
-</footer>
-</div>
+<section id="contact" class="contact">
+<h2>Get in Touch</h2>
+<a href="mailto:raphael@matjeschk.dev">📧 Email</a>
+<a href="https://github.com/huhncares-cmd">💻 GitHub</a>
+</section>
 
 <script>
-const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.animation='fadeIn .6s ease-out forwards'}})},{threshold:.1});document.querySelectorAll('.skill-card,.project-card,.section').forEach(el=>observer.observe(el));
+const c=document.getElementById('particles'),ctx=c.getContext('2d');c.width=innerWidth;c.height=innerHeight/3;const p=[];for(let i=0;i<50;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*1,vy:(Math.random()-.5)*1,s:Math.random()*2});function a(){ctx.fillStyle='rgba(0,0,0,.02)';ctx.fillRect(0,0,c.width,c.height);p.forEach(d=>{ctx.fillStyle='#0ff';ctx.fillRect(d.x,d.y,d.s,d.s);d.x+=d.vx;d.y+=d.vy;if(d.x<0||d.x>c.width)d.vx*=-1;if(d.y<0||d.y>c.height)d.vy*=-1});requestAnimationFrame(a)}a();
+const ham=document.getElementById('hamburger'),nav=document.getElementById('navLinks');ham.addEventListener('click',()=>{ham.classList.toggle('open');nav.classList.toggle('open')});nav.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{ham.classList.remove('open');nav.classList.remove('open')}));
 </script>
 </body>
 </html>
